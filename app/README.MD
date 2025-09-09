@@ -9,7 +9,7 @@ Code: A main activity with a matrix and two helper methods
 lines 14 - 16 initialize the cellState
 line 32 and 48 is where the helper methods are declared.
 
-Cellsate a matrix of boolean indicating which lights are on or off
+Cellstate a matrix of boolean indicating which lights are on or off
 Line 16 is where the CellState is defined.
 
 Code to color each button based on their cellState

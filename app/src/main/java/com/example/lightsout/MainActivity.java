@@ -64,6 +64,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public int countLights(){
+        int count = 0;
+        for (int i = 0; i < grid.getChildCount(); i++) {
+            Button gridButton = (Button) grid.getChildAt(i);
+
+                int row = i / GRID_SIZE;
+                int col = i % GRID_SIZE;
+
+                if(cellState[row][col] == true){
+                    count++;
+            }
+        }
+
+        return count;
+    }
     View.OnClickListener buttonListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
