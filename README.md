@@ -22,6 +22,10 @@ Line 32 with the recolor method
 You could make it so that whenever you recolor() is called, it also counts the number of 
 cellStates that are true and unpdate the value of score that way.
 
+# What is the name for the layout of the WinActivity
+Activity_win.xml
+
+
 
 
 
