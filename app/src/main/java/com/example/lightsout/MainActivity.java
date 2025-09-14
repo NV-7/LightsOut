@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private GridLayout grid;
     private boolean cellState[][];
     private TextView scoreTV;
+    private  Button randomizeButton;
+
 
 
     @Override
@@ -28,10 +30,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         grid = findViewById(R.id.light_grid);
         scoreTV = findViewById(R.id.score_counter);
+        randomizeButton = (Button)findViewById(R.id.randomize_button);
+        randomizeButton.setOnClickListener(randomizeListener);
 
 //      randomize();
 
         recolor();
+
 
 
         for (int i = 0; i < grid.getChildCount(); i++) {
@@ -81,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
 
         return count;
     }
+
+    View.OnClickListener randomizeListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            randomize();
+            recolor();
+            scoreTV.setText(countLights() + "");
+        }
+
+    };
     View.OnClickListener buttonListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {

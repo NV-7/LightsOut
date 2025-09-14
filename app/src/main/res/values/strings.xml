@@ -3,4 +3,5 @@
     <string name="header_text">Lights Out Navi</string>
     <string name="score_text">Score: </string>
     <string name="score_count">9</string>>
+    <string name="button_text">Randomize</string>
 </resources>
