@@ -15,4 +15,4 @@ Line 16 is where the CellState is defined.
 Code to color each button based on their cellState
 Line 32 with the recolor method
 
-code to get a handle on the GridLayout
+Code to get a handle on the GridLayout

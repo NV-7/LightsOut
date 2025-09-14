@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int GRID_SIZE = 3;
     private GridLayout grid;
     private boolean cellState[][];
+    private TextView scoreTV;
 
 
     @Override
@@ -25,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         grid = findViewById(R.id.light_grid);
+        scoreTV = findViewById(R.id.score_counter);
 
 //      randomize();
 
         recolor();
 
-        for (int i = 0; i < grid.getChildCount(); i++) {
 
+        for (int i = 0; i < grid.getChildCount(); i++) {
             Button currButton = (Button) grid.getChildAt(i);
             currButton.setOnClickListener(buttonListener);
         }
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             if (cellState[row][col] == true) {
                 gridButton.setBackgroundColor(getColor(R.color.aquamarine));
             } else {
-                gridButton.setBackgroundColor(getColor(R.color.mint));
+                gridButton.setBackgroundColor(getColor(R.color.black));
             }
         }
     }
@@ -71,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
                 int row = i / GRID_SIZE;
                 int col = i % GRID_SIZE;
-
                 if(cellState[row][col] == true){
                     count++;
             }
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             recolor();
+           scoreTV.setText(countLights() + "");
         }
 
 
